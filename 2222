@@ -1,0 +1,103 @@
+# # # def returnsum():
+# # #     a,b = askInfo()
+# # #     return a+b
+
+# # # def askInfo():
+# # #     a = int(input("Enter: "))
+# # #     b = int(input("Enter: "))
+# # #     return a,b
+
+# # # print(returnsum())
+
+
+# # def fact1(x):
+# #     if x==0 or x==1:
+# #         return 1
+# #     else:
+# #         return x * fact1(x-1)
+
+# # def factArra(*nums):
+# #     print(list(fact1(x) for x in nums))
+
+# # # print(fact1(5))
+# # # factArra(1,2,3,4,5,6,7,8,9,10)
+
+# def drawBoard(board):
+#     print("-"*9)
+#     for row in board:
+#         print(" | ".join(row))
+#         print("-" * 9)
+
+# def checkWinner(board,player):
+#     for i in range(3):
+#         if all(cell == player for cell in board[i]) or all(row[i] == player for row in board):
+#             return True
+#         if all(board[i][i] == player for i in range(3)) or all(board[i][2-i] == player for i in range(3)):
+#             return True
+#         return False
+
+# def boardisFull(board):
+#     return all(cell != " " for row in board for cell in row)
+
+# def entercord(current_player):
+#     # Гравець вводить рядок та стовпець
+#         row = int(input(f"Гравець {current_player}, введіть номер рядка (1, 2, 3): ")) -1
+#         col = int(input(f"Гравець {current_player}, введіть номер стовпця (1, 2, 3): ")) -1
+#         if row <0 or row >2 or col <0 or col >2:
+#             print("Wrong cordinates")
+#             entercord(current_player)
+#         return row -1,col -1
+
+
+# def tic_tac_toe():
+#     board = [[" " for _ in range(3)] for _ in range(3)]
+#     current_player = "X"
+ 
+#     while True:
+#         drawBoard(board)
+
+#         row,col = entercord(current_player)
+#         # Перевірка валідності ходу
+#         if board[row][col] != " ":
+#             print("Ця клітинка вже зайнята. Оберіть іншу.")
+#             continue
+ 
+#         # Заповнення клітинки гравцем
+#         board[row][col] = current_player
+ 
+#         # Перевірка переможця
+#         if checkWinner(board, current_player):
+#             drawBoard(board)
+#             print(f"Гравець {current_player} переміг!")
+#             break
+ 
+#         # Перевірка на нічию
+#         if boardisFull(board):
+#             drawBoard(board)
+#             print("Гра закінчилася в нічию!")
+#             break
+ 
+#         # Зміна гравця
+#         current_player = "O" if current_player == "X" else "X"
+# tic_tac_toe()
+
+
+def drawBoard():
+        print("-" * 9)
+        print("1. Dodavanna\n2. Vidnimanna\n3. Mnozennya")
+        print("-" * 9)
+
+
+drawBoard()
+
+def choice():
+    ch = int(input("Enter your choice: "))
+choice()
+
+def numbers():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+numbers()
+
+match choice:
+    case 1: 
